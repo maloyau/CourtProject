@@ -1,6 +1,6 @@
-package com.serhii.courtproject.services;
+package com.serhii.court.services;
 
-import com.serhii.courtproject.models.CourtCase;
+import com.serhii.court.models.CourtCase;
 
 import java.util.List;
 
