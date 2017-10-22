@@ -1,18 +1,18 @@
 package com.serhii.court.services.impl;
 
 import com.serhii.court.models.CourtCase;
-import com.serhii.court.repositories.CaseRepository;
-import com.serhii.court.services.CaseService;
+import com.serhii.court.repositories.CourtCaseRepository;
+import com.serhii.court.services.CourtCaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CaseServiceImpl implements CaseService{
+public class CourtCaseServiceImpl implements CourtCaseService {
 
     @Autowired
-    private CaseRepository caseRepository;
+    private CourtCaseRepository caseRepository;
 
     public void create(CourtCase c) {
         caseRepository.save(c);

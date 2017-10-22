@@ -11,12 +11,14 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <h1>Welcome</h1>
-<div class="btn-group">
-    <button type="button" class="btn btn-success">This is a success button</button>
-    <button type="button" class="btn btn-warning">This is a warning button</button>
-    <button type="button" class="btn btn-danger">This is a danger button</button>
-</div>
-<a href="/login">Login page</a>
+<a href="/">Index page</a>
+<form th:action="@{/login.html}" method="post">
+    <label for="username">Username</label>:
+    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+    <label for="password">Password</label>:
+    <input type="password" id="password" name="password" /> <br />
+    <input type="submit" value="Log in" />
+</form>
 </body>
 
 </html>

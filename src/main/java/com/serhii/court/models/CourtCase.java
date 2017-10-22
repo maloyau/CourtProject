@@ -11,7 +11,7 @@ import java.util.Map;
 @Data
 public class CourtCase {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne(fetch = FetchType.LAZY)
     private User responsibleEmployee;
@@ -19,7 +19,7 @@ public class CourtCase {
     @ManyToOne(fetch = FetchType.LAZY)
     private Court court;
     @ElementCollection
-    @CollectionTable(name = "description_map")
+    @CollectionTable(name = "descriptions")
     @MapKeyColumn(name = "description_date")
     @Column(name = "description_text")
     private Map<Date, String> descriptionMap;

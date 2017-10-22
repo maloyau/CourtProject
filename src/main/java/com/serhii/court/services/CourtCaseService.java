@@ -4,7 +4,7 @@ import com.serhii.court.models.CourtCase;
 
 import java.util.List;
 
-public interface CaseService {
+public interface CourtCaseService {
     void create(CourtCase c);
     void update(CourtCase c);
     CourtCase findOne(long id);
