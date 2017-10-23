@@ -2,10 +2,7 @@ package com.serhii.court.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "courts")
@@ -13,6 +10,8 @@ import javax.persistence.Table;
 public class Court {
     @Id
     @GeneratedValue
-    private long id;
+    @Column(name = "court_id")
+    private long courtId;
+    @Column(name = "court_name")
     private String name;
 }

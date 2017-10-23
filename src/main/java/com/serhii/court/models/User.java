@@ -11,13 +11,17 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "user_id")
+    private long userId;
+    @Column(name = "user_name")
     private String userName;
+    @Column(name = "mail")
     private String mail;
+    @Column(name = "pass")
     private String password;
     @ElementCollection
     @JoinTable(name = "roles", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role_name", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "role_id", nullable = false)
+    @Enumerated(EnumType.ORDINAL)
     private List<Role> roles;
 }
