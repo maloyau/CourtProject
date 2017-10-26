@@ -1,4 +1,4 @@
-package com.serhii.court.configs;
+package com.serhii.court.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.serhii.court.controllers")
+@ComponentScan(basePackages = "com.serhii.court.web.controller")
 public class MvcConfig extends WebMvcConfigurerAdapter{
 
     @Bean

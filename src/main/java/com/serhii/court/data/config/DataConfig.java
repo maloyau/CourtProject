@@ -1,4 +1,4 @@
-package com.serhii.court.configs;
+package com.serhii.court.data.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
@@ -14,11 +14,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.serhii.court.repositories")
+@EnableJpaRepositories(basePackages = "com.serhii.court.data.repository")
 @EnableTransactionManagement
 @PropertySource(value = "classpath:application.properties")
-@ComponentScan(basePackages = {"com.serhii.court"},
-        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
 public class DataConfig {
     @Value("${spring.datasource.DriverClassName}")
     private String DATASOURCE_DRIVER_CLASS_NAME;

@@ -1,8 +1,8 @@
-package com.serhii.court.services.impl;
+package com.serhii.court.data.service.impl;
 
-import com.serhii.court.models.CourtCase;
-import com.serhii.court.repositories.CourtCaseRepository;
-import com.serhii.court.services.CourtCaseService;
+import com.serhii.court.data.model.CourtCase;
+import com.serhii.court.data.repository.CourtCaseRepository;
+import com.serhii.court.data.service.CourtCaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

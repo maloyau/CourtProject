@@ -1,4 +1,4 @@
-package com.serhii.court;
+package com.serhii.court.web.init;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

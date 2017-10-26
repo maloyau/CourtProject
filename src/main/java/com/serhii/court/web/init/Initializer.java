@@ -1,11 +1,11 @@
-package com.serhii.court;
+package com.serhii.court.web.init;
 
-import com.serhii.court.configs.DataConfig;
-import com.serhii.court.configs.MvcConfig;
-import com.serhii.court.configs.SecurityConfig;
+import com.serhii.court.data.config.DataConfig;
+import com.serhii.court.web.config.MvcConfig;
+import com.serhii.court.web.config.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{DataConfig.class, SecurityConfig.class};
     }

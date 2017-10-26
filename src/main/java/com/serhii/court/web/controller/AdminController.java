@@ -1,4 +1,4 @@
-package com.serhii.court.controllers;
+package com.serhii.court.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

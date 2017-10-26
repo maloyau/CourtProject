@@ -1,4 +1,4 @@
-package com.serhii.court.models;
+package com.serhii.court.data.model;
 
 public enum State {
     PREPARATORY,

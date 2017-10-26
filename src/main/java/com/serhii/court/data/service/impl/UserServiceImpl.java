@@ -1,12 +1,9 @@
-package com.serhii.court.services.impl;
+package com.serhii.court.data.service.impl;
 
-import com.serhii.court.models.User;
-import com.serhii.court.repositories.UserRepository;
-import com.serhii.court.services.UserService;
+import com.serhii.court.data.model.User;
+import com.serhii.court.data.repository.UserRepository;
+import com.serhii.court.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

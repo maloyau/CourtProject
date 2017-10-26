@@ -1,6 +1,6 @@
-package com.serhii.court.repositories;
+package com.serhii.court.data.repository;
 
-import com.serhii.court.models.CourtCase;
+import com.serhii.court.data.model.CourtCase;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

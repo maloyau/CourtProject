@@ -1,4 +1,4 @@
-package com.serhii.court.models;
+package com.serhii.court.data.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
