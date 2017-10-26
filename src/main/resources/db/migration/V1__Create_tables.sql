@@ -1,8 +1,9 @@
 CREATE TABLE users (
   user_id bigint(20) NOT NULL AUTO_INCREMENT,
-  mail varchar(255) DEFAULT NULL,
-  pass varchar(255) DEFAULT NULL,
-  user_name varchar(255) DEFAULT NULL,
+  email varchar(255) DEFAULT NULL,
+  password varchar(255) DEFAULT NULL,
+  active BIT(1) DEFAULT 1,
+  username varchar(255) DEFAULT NULL UNIQUE,
   PRIMARY KEY (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,8 +38,8 @@ CREATE TABLE descriptions (
 
 CREATE TABLE roles (
   user_id bigint(20) NOT NULL,
-  role_id int(11) NOT NULL,
-  KEY FK_user_id (user_id),
+  role_name varchar(255) NOT NULL,
+  KEY FK_user_id (user_id,role_name),
   CONSTRAINT FK_role_user_id FOREIGN KEY (user_id) REFERENCES users (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

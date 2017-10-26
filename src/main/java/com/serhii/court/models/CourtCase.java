@@ -1,6 +1,7 @@
 package com.serhii.court.models;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,9 +19,11 @@ public class CourtCase {
     @JoinColumn(name = "user_id")
     private User responsibleEmployee;
     @Column(name = "number_case")
+    @NotEmpty(message = "Вкажіть номер судової справи")
     private String numberCase;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "court_id")
+    @NotEmpty(message = "Вкажіть суд в якому розглядається справа")
     private Court court;
     @ElementCollection
     @CollectionTable(name = "descriptions")
@@ -31,8 +34,9 @@ public class CourtCase {
     private double priceOfClaim;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "next_review_date")
+    @NotEmpty(message = "Вкажіть дату наступного розгляду")
     private Date nextReviewDate;
     @Column(name = "state")
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private State state;
 }

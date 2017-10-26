@@ -1,12 +1,15 @@
 package com.serhii.court.services;
 
 import com.serhii.court.models.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
 public interface UserService {
-    void create(User user);
+    void save(User user);
     void update(User user);
-    User findOne(long id);
+    User findById(long id);
+    User findByUsername(String username);
     List<User> findAll();
 }

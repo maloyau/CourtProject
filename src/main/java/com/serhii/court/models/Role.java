@@ -1,6 +1,6 @@
 package com.serhii.court.models;
 
-public enum  Role {
+public enum Role {
     GUEST,
     ADMIN,
     USER,
