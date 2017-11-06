@@ -1,6 +1,6 @@
 package com.serhii.court.service;
 
-import com.serhii.court.model.User;
+import com.serhii.court.entity.User;
 
 import java.util.List;
 

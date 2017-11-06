@@ -1,6 +1,6 @@
 package com.serhii.court.repository;
 
-import com.serhii.court.model.Role;
+import com.serhii.court.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,9 @@
 package com.serhii.court.controller;
 
-import com.serhii.court.dto.CourtCaseDto;
 import com.serhii.court.dto.UserDto;
-import com.serhii.court.model.CourtCase;
-import com.serhii.court.model.User;
-import com.serhii.court.service.CourtCaseService;
+import com.serhii.court.entity.Cause;
+import com.serhii.court.entity.User;
+import com.serhii.court.service.CauseService;
 import com.serhii.court.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ import java.util.List;
 public class AppController {
 
     @Autowired
-    private CourtCaseService courtCaseService;
+    private CauseService causeService;
 
     @Autowired
     private UserService userService;
@@ -39,8 +38,8 @@ public class AppController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ModelAndView hello() {
-        List<CourtCase> cases = courtCaseService.findAll();
-        return new ModelAndView("hello", "cases", cases);
+        List<Cause> causes = causeService.findAll();
+        return new ModelAndView("hello", "cases", causes);
     }
 
     @RequestMapping(value = "/hello/users", method = RequestMethod.GET)

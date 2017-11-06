@@ -1,7 +1,8 @@
 package com.serhii.court.service.impl;
 
-import com.serhii.court.model.Role;
-import com.serhii.court.model.User;
+
+import com.serhii.court.entity.Role;
+import com.serhii.court.entity.User;
 import com.serhii.court.repository.RoleRepository;
 import com.serhii.court.repository.UserRepository;
 import com.serhii.court.service.UserService;

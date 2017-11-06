@@ -1,9 +1,9 @@
 package com.serhii.court.repository;
 
-import com.serhii.court.entity.Description;
+import com.serhii.court.entity.Participant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DescriptionRepository  extends JpaRepository<Description, Long> {
+public interface ParticipantRepository extends JpaRepository<Participant, Long> {
 }
