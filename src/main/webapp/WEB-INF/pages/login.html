@@ -7,7 +7,7 @@
     </meta>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen"/>
-    <title>Welcome</title>
+    <title>Судові справи</title>
 </head>
 <body>
 <script src="/js/jquery.js"></script>
@@ -15,50 +15,53 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">CourtProject</a>
+            <a class="navbar-brand" href="#">Судові справи</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/home">Home</a></li>
-            <li><a href="/admin">My cases</a></li>
-            <li><a href="/hello">All cases</a></li>
+            <li class="active"><a href="/home">Головна</a></li>
+            <li><a href="/admin">Мій кабінет</a></li>
+            <li><a href="/hello">Всі судові справи</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" th:inline="text"><span class="glyphicon glyphicon-user"></span> [[${#httpServletRequest.remoteUser}]]</a></li>
-            <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-in"></span> Sign out</a></li>
-        </ul>
+        <div th:if="${#httpServletRequest.remoteUser}">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" th:inline="text"><span class="glyphicon glyphicon-user"></span>
+                    [[${#httpServletRequest.remoteUser}]]</a></li>
+                <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-in"></span> Вихід</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
 <div class="container" align="center">
     <div class="row">
         <div class="Absolute-Center is-Responsive">
-            <div id="logo-container"><h3>Enter username and password</h3></div>
+            <div id="logo-container"><h3>Введіть логін та пароль</h3></div>
             <br/>
             <div class="col-sm-12 col-md-4 col-md-offset-4">
                 <form th:action="@{/login}" method="post" id="loginForm">
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input class="form-control" type="text" name='username' placeholder="username" form="loginForm"/>
+                        <input class="form-control" type="text" name='username' placeholder="логін" form="loginForm"/>
                     </div>
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input class="form-control" type="password" name='password' placeholder="password" form="loginForm"/>
+                        <input class="form-control" type="password" name='password' placeholder="пароль" form="loginForm"/>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-def btn-block" form="loginForm">Login</button>
+                        <button type="submit" class="btn btn-def btn-block" form="loginForm">Увійти</button>
                     </div>
                     <div class="form-group text-center">
-                        <a href="#">Forgot password </a>&nbsp;|&nbsp;<a href="#">Support</a>
+                        <a href="#">Забули пароль? </a>&nbsp;|&nbsp;<a href="#">Підтримка</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div th:if="${param.error}">
-        <p class="text-danger">Invalid username and password.</p>
+    <div th:if="${param.error}" class="col-sm-12 col-md-4 col-md-offset-4">
+        <div class="alert alert-danger" role="alert">Помилковий логін користувача або пароль.</div>
     </div>
-    <div th:if="${param.logout}">
-        <p class="text-danger">You have been logged out.</p>
+    <div th:if="${param.logout}" class="col-sm-12 col-md-4 col-md-offset-4">
+        <div class="alert alert-info" role="alert">Ви вийшли із сеансу.</div>
     </div>
 </div>
 </body>
