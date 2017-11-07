@@ -30,12 +30,12 @@ INSERT INTO courts (court_name) VALUES ('Святошинський районн
 INSERT INTO courts (court_name) VALUES ('Соломянський районний суд м. Києва');
 INSERT INTO courts (court_name) VALUES ('Дарницький районний суд м. Києва');
 INSERT INTO courts (court_name) VALUES ('Деснянський районний суд м. Києва');
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (1, 3, '2017-10-30 11:00:00', '123К-10', 10123.01);
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (2, 4, '2017-10-10 11:00:00', '123К-11', 12000);
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (3, 4, '2017-01-10 11:00:00', '123К-12', 100000.50);
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (5, 5, '2017-10-30 11:00:00', '123К-13', 23123.05);
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (5, 6, '2017-10-30 11:00:00', '123К-14', 44178.12);
-INSERT INTO causes (court_id, user_id, next_date, number, price) VALUES (2, 7, '2017-10-30 11:00:00', '123К-15', 1000.01);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 1, 3, '2017-10-30 11:00:00', '123К-10', 10123.01);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 2, 4, '2017-10-10 11:00:00', '123К-11', 12000);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 3, 4, '2017-01-10 11:00:00', '123К-12', 100000.50);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 5, 5, '2017-10-30 11:00:00', '123К-13', 23123.05);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 5, 6, '2017-10-30 11:00:00', '123К-14', 44178.12);
+INSERT INTO causes (cause_brief, court_id, user_id, next_date, number, price) VALUES ('Стягнення заборгованості', 2, 7, '2017-10-30 11:00:00', '123К-15', 1000.01);
 INSERT INTO descriptions (cause_id, description_text, description_date) VALUES (1, 'Подано позов до суду', '2017-10-30 11:00:00');
 INSERT INTO descriptions (cause_id, description_text, description_date) VALUES (1, 'Перше засідання суду', '2017-10-30 11:00:00');
 INSERT INTO descriptions (cause_id, description_text, description_date) VALUES (2, 'Подано позов до суду', '2017-10-30 11:00:00');

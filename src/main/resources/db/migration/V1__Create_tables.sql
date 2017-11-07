@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `dbtest`.`users` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbtest`.`causes` (
   `cause_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `cause_brief` VARCHAR(255) NOT NULL,
   `next_date` DATETIME NULL DEFAULT NULL,
   `number` VARCHAR(255) NOT NULL,
   `price` DOUBLE NULL DEFAULT NULL,

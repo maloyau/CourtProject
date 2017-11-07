@@ -27,7 +27,7 @@ public class Cause {
     }
 
     @Basic
-    @Column(name = "brief", nullable = true, length = 255)
+    @Column(name = "cause_brief", nullable = true, length = 255)
     public String getBrief() {
         return brief;
     }
