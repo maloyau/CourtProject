@@ -2,12 +2,14 @@ package com.serhii.court.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "descriptions")
 public class Description {
     private long descriptionId;
-    private Timestamp descriptionDate;
+    private Date descriptionDate;
     private String descriptionText;
     private Cause cause;
 
@@ -23,11 +25,11 @@ public class Description {
 
     @Basic
     @Column(name = "description_date", nullable = false)
-    public Timestamp getDescriptionDate() {
+    public Date getDescriptionDate() {
         return descriptionDate;
     }
 
-    public void setDescriptionDate(Timestamp descriptionDate) {
+    public void setDescriptionDate(Date descriptionDate) {
         this.descriptionDate = descriptionDate;
     }
 

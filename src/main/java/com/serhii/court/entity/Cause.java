@@ -8,12 +8,13 @@ import java.util.Set;
 @Table(name = "causes")
 public class Cause {
     private long causeId;
-    private Date nextDate;
     private String number;
-    private Double price;
-    private User user;
-    private Court court;
     private Set<Participant> participants;
+    private String brief;
+    private Court court;
+    private Double price;
+    private Date nextDate;
+    private User user;
 
     @Id
     @Column(name = "cause_id", nullable = false)
@@ -23,6 +24,16 @@ public class Cause {
 
     public void setCauseId(long causeId) {
         this.causeId = causeId;
+    }
+
+    @Basic
+    @Column(name = "brief", nullable = true, length = 255)
+    public String getBrief() {
+        return brief;
+    }
+
+    public void setBrief(String brief) {
+        this.brief = brief;
     }
 
     @Basic
@@ -87,4 +98,5 @@ public class Cause {
     public void setParticipants(Set<Participant> participants) {
         this.participants = participants;
     }
+
 }

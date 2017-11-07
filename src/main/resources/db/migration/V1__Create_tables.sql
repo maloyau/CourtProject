@@ -86,6 +86,26 @@ CREATE TABLE IF NOT EXISTS `dbtest`.`descriptions` (
 
 
 -- -----------------------------------------------------
+-- Table `dbtest`.`decisions`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `dbtest`.`decisions` (
+  `decision_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `decision_brief` VARCHAR(255) NOT NULL,
+  `decision_date` DATETIME NOT NULL,
+  `decision_text` TEXT NOT NULL,
+  `cause_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`decision_id`),
+  INDEX `fk_case_id_idx` (`cause_id` ASC),
+  CONSTRAINT `fk_decicions_cause_id`
+  FOREIGN KEY (`cause_id`)
+  REFERENCES `dbtest`.`causes` (`cause_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `dbtest`.`roles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbtest`.`roles` (
@@ -122,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `dbtest`.`causes_participants` (
   REFERENCES `dbtest`.`causes` (`cause_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_causes_participant_cause_id`
+  CONSTRAINT `fk_causes_participant_participant_id`
   FOREIGN KEY (`participant_id`)
   REFERENCES `dbtest`.`participants` (`participant_id`)
     ON DELETE NO ACTION

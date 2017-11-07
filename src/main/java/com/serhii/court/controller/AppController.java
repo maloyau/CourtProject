@@ -38,8 +38,9 @@ public class AppController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ModelAndView hello() {
+
         List<Cause> causes = causeService.findAll();
-        return new ModelAndView("hello", "cases", causes);
+        return new ModelAndView("hello", "causes", causes);
     }
 
     @RequestMapping(value = "/hello/users", method = RequestMethod.GET)
