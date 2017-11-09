@@ -15,6 +15,6 @@ public class Role extends AbstractEntity{
     @Column(name = "role_id", nullable = false)
     private long roleId;
     @Basic
-    @Column(name = "role_name", nullable = false, length = 255)
-    private String roleName;
+    @Column(name = "name", nullable = false, length = 255, unique = true)
+    private String name;
 }

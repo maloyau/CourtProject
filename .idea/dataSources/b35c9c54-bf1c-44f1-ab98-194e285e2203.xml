@@ -419,37 +419,53 @@ participant_id</ColNames>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="105" parent="17" name="PRIMARY">
+    <index id="105" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="106" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="107" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="106" parent="18" name="user_id">
+    <key id="108" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>UK_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
+    </key>
+    <key id="109" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>UK_r43af9ap4edm43mmtq01oddj6</UnderlyingIndexName>
+    </key>
+    <column id="110" parent="18" name="user_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="107" parent="18" name="role_id">
+    <column id="111" parent="18" name="role_id">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="108" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <index id="112" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
     </index>
-    <key id="109" parent="18" name="PRIMARY">
+    <key id="113" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="110" parent="18" name="FK2o0jvgh89lemvvo17cbqvdxaa">
+    <foreign-key id="114" parent="18" name="FK2o0jvgh89lemvvo17cbqvdxaa">
       <ColNames>user_id</ColNames>
       <RefSchemaName>dbtest</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>user_id</RefColNames>
     </foreign-key>
-    <foreign-key id="111" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <foreign-key id="115" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
       <RefSchemaName>dbtest</RefSchemaName>
       <RefTableName>roles</RefTableName>

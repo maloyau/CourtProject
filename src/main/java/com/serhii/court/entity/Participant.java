@@ -15,9 +15,9 @@ public class Participant extends AbstractEntity{
     @Column(name = "participant_id", nullable = false)
     private long participantId;
     @Basic
-    @Column(name = "participant_name", nullable = false, length = 255)
-    private String participantName;
+    @Column(name = "name", nullable = false, length = 255)
+    private String name;
     @Basic
-    @Column(name = "participant_address", nullable = true, length = 255)
-    private String participantAddress;
+    @Column(name = "address", nullable = true, length = 255)
+    private String address;
 }

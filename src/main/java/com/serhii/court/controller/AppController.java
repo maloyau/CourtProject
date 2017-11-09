@@ -2,7 +2,9 @@ package com.serhii.court.controller;
 
 import com.serhii.court.dto.UserDto;
 import com.serhii.court.entity.Cause;
+import com.serhii.court.entity.Role;
 import com.serhii.court.entity.User;
+import com.serhii.court.repository.RoleRepository;
 import com.serhii.court.service.CauseService;
 import com.serhii.court.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -13,16 +15,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class AppController {
+
+    private boolean start = true;
 
     @Autowired
     private CauseService causeService;
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     private static ModelMapper modelMapper = new ModelMapper();
 

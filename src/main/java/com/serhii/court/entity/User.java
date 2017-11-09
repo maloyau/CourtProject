@@ -16,13 +16,13 @@ public class User extends AbstractEntity{
     @Column(name = "user_id", nullable = false)
     private long userId;
     @Basic
-    @Column(name = "email", nullable = false, length = 255)
+    @Column(name = "email", nullable = false, length = 255, unique = true)
     private String email;
     @Basic
     @Column(name = "password", nullable = false, length = 255)
     private String password;
     @Basic
-    @Column(name = "username", nullable = false, length = 255)
+    @Column(name = "username", nullable = false, length = 255, unique = true)
     private String username;
     @Basic
     @Column(name = "firstname", nullable = true, length = 255)
@@ -33,7 +33,7 @@ public class User extends AbstractEntity{
     @Basic
     @Column(name = "active", nullable = false)
     private boolean active;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role_id"))

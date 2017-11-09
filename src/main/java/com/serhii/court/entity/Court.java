@@ -15,9 +15,9 @@ public class Court extends AbstractEntity{
     @Column(name = "court_id", nullable = false)
     private long courtId;
     @Basic
-    @Column(name = "court_name", nullable = false, length = 255)
-    private String courtName;
+    @Column(name = "name", nullable = false, length = 255)
+    private String name;
     @Basic
-    @Column(name = "court_address", nullable = true, length = 255)
-    private String courtAddress;
+    @Column(name = "address", nullable = true, length = 255)
+    private String address;
 }

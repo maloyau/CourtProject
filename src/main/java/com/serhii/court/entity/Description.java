@@ -16,11 +16,11 @@ public class Description extends AbstractEntity{
     @Column(name = "description_id", nullable = false)
     private long descriptionId;
     @Basic
-    @Column(name = "description_date", nullable = false)
-    private Date descriptionDate;
+    @Column(name = "date", nullable = false)
+    private Date date;
     @Basic
-    @Column(name = "description_text", nullable = false, columnDefinition = "text")
-    private String descriptionText;
+    @Column(name = "text", nullable = false, columnDefinition = "text")
+    private String text;
     @ManyToOne
     @JoinColumn(name = "cause_id", nullable = false)
     private Cause cause;

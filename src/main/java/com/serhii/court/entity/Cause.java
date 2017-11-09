@@ -25,7 +25,7 @@ public class Cause extends AbstractEntity{
             inverseJoinColumns = @JoinColumn(name = "participant_id", referencedColumnName = "participant_id"))
     private Set<Participant> participants;
     @Basic
-    @Column(name = "cause_brief", nullable = true, length = 255)
+    @Column(name = "brief", nullable = true, length = 255)
     private String brief;
     @ManyToOne
     @JoinColumn(name = "court_id", nullable = true)
