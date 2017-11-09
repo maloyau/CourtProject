@@ -1,56 +1,25 @@
 package com.serhii.court.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "descriptions")
 public class Description {
-    private long descriptionId;
-    private Date descriptionDate;
-    private String descriptionText;
-    private Cause cause;
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "description_id", nullable = false)
-    public long getDescriptionId() {
-        return descriptionId;
-    }
-
-    public void setDescriptionId(long descriptionId) {
-        this.descriptionId = descriptionId;
-    }
-
+    private long descriptionId;
     @Basic
     @Column(name = "description_date", nullable = false)
-    public Date getDescriptionDate() {
-        return descriptionDate;
-    }
-
-    public void setDescriptionDate(Date descriptionDate) {
-        this.descriptionDate = descriptionDate;
-    }
-
+    private Date descriptionDate;
     @Basic
-    @Column(name = "description_text", nullable = false, length = -1)
-    public String getDescriptionText() {
-        return descriptionText;
-    }
-
-    public void setDescriptionText(String descriptionText) {
-        this.descriptionText = descriptionText;
-    }
-
+    @Column(name = "description_text", nullable = false, columnDefinition = "text")
+    private String descriptionText;
     @ManyToOne
     @JoinColumn(name = "cause_id", nullable = false)
-    public Cause getCause() {
-        return cause;
-    }
-
-    public void setCause(Cause causeId) {
-        this.cause = cause;
-    }
-
+    private Cause cause;
 }

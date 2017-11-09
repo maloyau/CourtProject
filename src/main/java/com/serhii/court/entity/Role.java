@@ -1,31 +1,18 @@
 package com.serhii.court.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "roles")
 public class Role {
-    private long roleId;
-    private String roleName;
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id", nullable = false)
-    public long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(long roleId) {
-        this.roleId = roleId;
-    }
-
+    private long roleId;
     @Basic
     @Column(name = "role_name", nullable = false, length = 255)
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
+    private String roleName;
 }

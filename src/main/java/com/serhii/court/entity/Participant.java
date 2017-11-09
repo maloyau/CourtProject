@@ -1,42 +1,21 @@
 package com.serhii.court.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "participants")
 public class Participant {
-    private long participantId;
-    private String participantName;
-    private String participantAddress;
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "participant_id", nullable = false)
-    public long getParticipantId() {
-        return participantId;
-    }
-
-    public void setParticipantId(long participantId) {
-        this.participantId = participantId;
-    }
-
+    private long participantId;
     @Basic
     @Column(name = "participant_name", nullable = false, length = 255)
-    public String getParticipantName() {
-        return participantName;
-    }
-
-    public void setParticipantName(String participantName) {
-        this.participantName = participantName;
-    }
-
+    private String participantName;
     @Basic
     @Column(name = "participant_address", nullable = true, length = 255)
-    public String getParticipantAddress() {
-        return participantAddress;
-    }
-
-    public void setParticipantAddress(String participantAddress) {
-        this.participantAddress = participantAddress;
-    }
-
+    private String participantAddress;
 }
