@@ -52,6 +52,9 @@
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:2.6.1" />
           <element id="library" level="project" name="Maven: org.modelmapper.extensions:modelmapper-spring:1.1.0" />
           <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:1.1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.9" />
         </element>
       </element>
       <element id="directory" name="META-INF">

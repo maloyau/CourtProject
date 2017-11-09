@@ -1,9 +1,12 @@
 package com.serhii.court.config;
 
+import com.serhii.court.service.impl.AuditorAwareImpl;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableJpaRepositories(basePackages = "com.serhii.court.repository")
 @EnableTransactionManagement
+@EnableJpaAuditing(auditorAwareRef="auditorProvider")
 @PropertySource(value = "classpath:application.properties")
 @ComponentScan(basePackages = {"com.serhii.court"},
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
@@ -80,6 +84,11 @@ public class DataConfig {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
+    }
+
+    @Bean
+    AuditorAware<String> auditorProvider() {
+        return new AuditorAwareImpl();
     }
 
 }
