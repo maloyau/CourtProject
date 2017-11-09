@@ -1,14 +1,16 @@
 package com.serhii.court.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "decisions")
-public class Decision {
+public class Decision extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "decision_id", nullable = false)
