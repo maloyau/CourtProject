@@ -1,29 +1,32 @@
 package com.serhii.court.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "causes")
-public class Cause extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cause_id", nullable = false)
-    private long causeId;
+public class Cause extends AbstractEntity {
     @Basic
     @Column(name = "number", nullable = false, length = 255)
     private String number;
     @ManyToMany
     @JoinTable(name = "causes_participants",
             joinColumns = @JoinColumn(name = "cause_id"),
-            inverseJoinColumns = @JoinColumn(name = "participant_id", referencedColumnName = "participant_id"))
+            inverseJoinColumns = @JoinColumn(name = "participant_id", referencedColumnName = "id"))
     private Set<Participant> participants;
+    @Basic
+    @Column(name = "contract", nullable = true, length = 255)
+    private String contract;
     @Basic
     @Column(name = "brief", nullable = true, length = 255)
     private String brief;

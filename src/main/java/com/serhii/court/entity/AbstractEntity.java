@@ -8,29 +8,31 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class AbstractEntity {
-    @Column(name = "created_by")
+public abstract class AbstractEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "create_by_user_id")
     @CreatedBy
     private String createdBy;
-    @Column(name = "created_date", nullable = false, updatable = false)
+    @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     private Date createdDate;
-    @Column(name = "modified_by")
+    @Column(name = "last_modified_by_user_id")
     @LastModifiedBy
-    private String modifiedBy;
-    @Column(name = "modified_date")
+    private String lastModifiedBy;
+    @Column(name = "last_modified_date")
+    @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
-    private Date modifiedDate;
+    private Date lastModifiedDate;
     @Version
     @Column(name = "version")
     private long version;

@@ -1,6 +1,7 @@
 package com.serhii.court.config;
 
-import com.serhii.court.service.impl.AuditorAwareImpl;
+import com.serhii.court.entity.User;
+import com.serhii.court.service.impl.AuditorAwareServiceImpl;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Value;
@@ -90,7 +91,7 @@ public class DataConfig {
 
     @Bean
     AuditorAware<String> auditorProvider() {
-        return new AuditorAwareImpl();
+        return new AuditorAwareServiceImpl();
     }
 
 }

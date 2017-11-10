@@ -1,23 +1,20 @@
 package com.serhii.court.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "users")
 public class User extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false)
-    private long userId;
-    @Basic
-    @Column(name = "email", nullable = false, length = 255, unique = true)
-    private String email;
     @Basic
     @Column(name = "password", nullable = false, length = 255)
     private String password;
@@ -31,11 +28,13 @@ public class User extends AbstractEntity{
     @Column(name = "lastname", nullable = true, length = 255)
     private String lastname;
     @Basic
-    @Column(name = "active", nullable = false)
+    @Column(name = "active", nullable = false,columnDefinition = "BIT DEFAULT 1")
     private boolean active;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role_id"))
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;
+    @Embedded
+    private ContactInfo contactInfo;
 }

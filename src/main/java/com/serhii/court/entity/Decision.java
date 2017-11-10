@@ -1,20 +1,20 @@
 package com.serhii.court.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "decisions")
 public class Decision extends AbstractEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "decision_id", nullable = false)
-    private long decisionId;
     @Basic
     @Column(name = "decision_brief", nullable = false)
     private String decisionBrief;
@@ -26,6 +26,6 @@ public class Decision extends AbstractEntity{
     @Column(name = "decision_date", nullable = false)
     private Date decisionDate;
     @ManyToOne
-    @JoinColumn(name = "cause_id", nullable = false)
+    @JoinColumn(name = "cause_id", referencedColumnName = "id", nullable = false)
     private Cause cause;
 }

@@ -23,6 +23,12 @@ import java.util.Set;
 public class AppController {
 
     private CauseService causeService;
+    private UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @Autowired
     public void setCauseService(CauseService causeService) {
@@ -31,6 +37,18 @@ public class AppController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home() {
+        return "home";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String add() {
+        Set<Role> roles = new HashSet<>();
+        roles.add(new Role("ROLE_ADMIN"));
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("12345678");
+        user.setRoles(roles);
+        userService.create(user);
         return "home";
     }
 
