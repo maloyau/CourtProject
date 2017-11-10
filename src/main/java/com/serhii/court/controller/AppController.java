@@ -22,18 +22,12 @@ import java.util.Set;
 @Controller
 public class AppController {
 
-    private boolean start = true;
-
-    @Autowired
     private CauseService causeService;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
-    private static ModelMapper modelMapper = new ModelMapper();
+    public void setCauseService(CauseService causeService) {
+        this.causeService = causeService;
+    }
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home() {
@@ -51,7 +45,7 @@ public class AppController {
         List<Cause> causes = causeService.findAll();
         return new ModelAndView("hello", "causes", causes);
     }
-
+/*
     @RequestMapping(value = "/hello/users", method = RequestMethod.GET)
     public ModelAndView users() {
         List<UserDto> usersDto = new ArrayList<>();
@@ -59,7 +53,7 @@ public class AppController {
             usersDto.add(modelMapper.map(user, UserDto.class));
         }
         return new ModelAndView("hello", "users", usersDto);
-    }
+    }*/
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin() {

@@ -14,8 +14,12 @@ import java.util.List;
 @Transactional
 public class CauseServiceImpl implements CauseService {
 
-    @Autowired
     private CauseRepository causeRepository;
+
+    @Autowired
+    public CauseServiceImpl(CauseRepository causeRepository) {
+        this.causeRepository = causeRepository;
+    }
 
     @Override
     public Cause create(Cause cause) {

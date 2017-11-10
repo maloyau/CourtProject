@@ -359,113 +359,121 @@ participant_id</ColNames>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="92" parent="16" name="PRIMARY">
+    <index id="92" parent="16" name="UK_ofx66keruapi6vyqpv6f2or37">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="93" parent="17" name="user_id">
+    <key id="94" parent="16" name="UK_ofx66keruapi6vyqpv6f2or37">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UK_ofx66keruapi6vyqpv6f2or37</UnderlyingIndexName>
+    </key>
+    <column id="95" parent="17" name="user_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="94" parent="17" name="created_by">
+    <column id="96" parent="17" name="created_by">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="95" parent="17" name="created_date">
+    <column id="97" parent="17" name="created_date">
       <Position>3</Position>
       <DataType>datetime(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="96" parent="17" name="modified_by">
+    <column id="98" parent="17" name="modified_by">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="97" parent="17" name="modified_date">
+    <column id="99" parent="17" name="modified_date">
       <Position>5</Position>
       <DataType>datetime(6)|0</DataType>
     </column>
-    <column id="98" parent="17" name="version">
+    <column id="100" parent="17" name="version">
       <Position>6</Position>
       <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="99" parent="17" name="active">
+    <column id="101" parent="17" name="active">
       <Position>7</Position>
       <DataType>bit(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="100" parent="17" name="email">
+    <column id="102" parent="17" name="email">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="101" parent="17" name="firstname">
+    <column id="103" parent="17" name="firstname">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="102" parent="17" name="lastname">
+    <column id="104" parent="17" name="lastname">
       <Position>10</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="103" parent="17" name="password">
+    <column id="105" parent="17" name="password">
       <Position>11</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="104" parent="17" name="username">
+    <column id="106" parent="17" name="username">
       <Position>12</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="105" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+    <index id="107" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="106" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
+    <index id="108" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="107" parent="17" name="PRIMARY">
+    <key id="109" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="108" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+    <key id="110" parent="17" name="UK_6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UK_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
     </key>
-    <key id="109" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
+    <key id="111" parent="17" name="UK_r43af9ap4edm43mmtq01oddj6">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>UK_r43af9ap4edm43mmtq01oddj6</UnderlyingIndexName>
     </key>
-    <column id="110" parent="18" name="user_id">
+    <column id="112" parent="18" name="user_id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="111" parent="18" name="role_id">
+    <column id="113" parent="18" name="role_id">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="112" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <index id="114" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
     </index>
-    <key id="113" parent="18" name="PRIMARY">
+    <key id="115" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="114" parent="18" name="FK2o0jvgh89lemvvo17cbqvdxaa">
+    <foreign-key id="116" parent="18" name="FK2o0jvgh89lemvvo17cbqvdxaa">
       <ColNames>user_id</ColNames>
       <RefSchemaName>dbtest</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>user_id</RefColNames>
     </foreign-key>
-    <foreign-key id="115" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
+    <foreign-key id="117" parent="18" name="FKj6m8fwv7oqv74fcehir1a9ffy">
       <ColNames>role_id</ColNames>
       <RefSchemaName>dbtest</RefSchemaName>
       <RefTableName>roles</RefTableName>

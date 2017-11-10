@@ -71,6 +71,7 @@ public class DataConfig {
         vendorAdapter.setShowSql(HIBERNATE_SHOW_SQL);
         return vendorAdapter;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
@@ -79,6 +80,7 @@ public class DataConfig {
         factory.setPackagesToScan(HIBERNATE_PACKAGES_TO_SCAN);
         return factory;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
